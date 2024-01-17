@@ -67,10 +67,41 @@ List<ProductType> productTyoes = new List<ProductType>()
 Console.WriteLine("Welcome to the BrassAndPoem Shop!");
 
 //implement your loop here
-
+string choice = null;
+while (choice != "5")
+{
+    DisplayMenu();
+    choice = Console.ReadLine();
+    if (choice == "1")
+    {
+        DisplayAllProducts(products, productTyoes);
+    }
+    else if (choice == "2")
+    {
+        DeleteProduct(products, productTyoes);  
+    }
+    else if (choice == "3")
+    {
+       AddProduct(products, productTyoes);
+    }
+    else if (choice == "4")
+    {
+        UpdateProduct(products, productTyoes);
+    }
+    else if (choice == "5")
+    {
+        Console.WriteLine("Goodbye and Thanks for shopping with us!");
+    }
+}
 void DisplayMenu()
 {
-    throw new NotImplementedException();
+    Console.WriteLine(@"Menu:
+1. Display all Products
+2. Delete a Product
+3. Add a Product
+4. Update a Product
+5. Exit
+");
 }
 
 void DisplayAllProducts(List<Product> products, List<ProductType> productTypes)
