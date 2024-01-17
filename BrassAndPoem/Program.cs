@@ -64,6 +64,8 @@ List<ProductType> productTyoes = new List<ProductType>()
 };
 //put your greeting here
 
+Console.WriteLine("Welcome to the BrassAndPoem Shop!");
+
 //implement your loop here
 
 void DisplayMenu()
