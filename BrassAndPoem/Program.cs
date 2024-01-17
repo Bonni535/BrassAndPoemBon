@@ -49,6 +49,19 @@ List<Product> products = new List<Product>()
 
 //create a "productTypes" variable here with a List of ProductTypes, and add "Brass" and "Poem" types to the List. 
 
+List<ProductType> productTyoes = new List<ProductType>()
+{
+    new ProductType()
+    {
+        Title = "Brass",
+        Id = 1,
+    },
+    new ProductType()
+    {
+        Title = "Poem",
+        Id = 2,
+    },
+};
 //put your greeting here
 
 //implement your loop here
