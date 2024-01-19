@@ -116,9 +116,12 @@ void DisplayAllProducts(List<Product> products, List<ProductType> productTypes)
 
 void DeleteProduct(List<Product> products, List<ProductType> productTypes)
 {
-    throw new NotImplementedException()
+    DisplayAllProducts(products, productTypes);
+    int response = int.Parse(Console.ReadLine().Trim());
+    if (response >= 1 && response <= products.Count)
     {
-
+        products.RemoveAt(response - 1);
+        Console.WriteLine("Product Deleted!");
     }
 }
 
