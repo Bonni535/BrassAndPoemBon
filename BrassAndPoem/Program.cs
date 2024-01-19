@@ -107,6 +107,11 @@ void DisplayMenu()
 void DisplayAllProducts(List<Product> products, List<ProductType> productTypes)
 {
     for (int i=0; i<products.Count; i++)
+    {
+        Product product = products[i];
+        ProductType productType = productTypes.FirstOrDefault(pt => pt.Id == product.ProductTypeId);
+        Console.WriteLine($"{i + 1}. {product.Name}, Product type {productType.Id}");
+    }
 }
 
 void DeleteProduct(List<Product> products, List<ProductType> productTypes)
