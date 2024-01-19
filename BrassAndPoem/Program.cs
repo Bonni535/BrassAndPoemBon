@@ -106,12 +106,15 @@ void DisplayMenu()
 
 void DisplayAllProducts(List<Product> products, List<ProductType> productTypes)
 {
-    throw new NotImplementedException();
+    for (int i=0; i<products.Count; i++)
 }
 
 void DeleteProduct(List<Product> products, List<ProductType> productTypes)
 {
-    throw new NotImplementedException();
+    throw new NotImplementedException()
+    {
+
+    }
 }
 
 void AddProduct(List<Product> products, List<ProductType> productTypes)
