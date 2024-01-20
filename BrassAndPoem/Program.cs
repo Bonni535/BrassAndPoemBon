@@ -106,7 +106,7 @@ void DisplayMenu()
 
 void DisplayAllProducts(List<Product> products, List<ProductType> productTypes)
 {
-    for (int i=0; i<products.Count; i++)
+    for (int i=0; i < products.Count; i++)
     {
         Product product = products[i];
         ProductType productType = productTypes.FirstOrDefault(pt => pt.Id == product.ProductTypeId);
@@ -145,7 +145,56 @@ void AddProduct(List<Product> products, List<ProductType> productTypes)
 
 void UpdateProduct(List<Product> products, List<ProductType> productTypes)
 {
-    throw new NotImplementedException();
+    DisplayAllProducts(products, productTypes);
+    Console.WriteLine("Would you like to update this Product?");
+    
+    int userChoice = int.Parse(Console.ReadLine().Trim());
+    int productToUpdate = userChoice - 1;
+
+    Product selectedProduct = products[productToUpdate];
+    Console.WriteLine($"You chose {selectedProduct.Name}. Its price is {selectedProduct.Price} and its type is {selectedProduct.ProductTypeId}");
+    Console.WriteLine("Insert New Name");
+    string response1 = Console.ReadLine();
+    Console.WriteLine("Insert New Price");
+    string response2 = Console.ReadLine();
+    Console.WriteLine("Insert New Type");
+    string response3 = Console.ReadLine();
+
+    if (!string.IsNullOrEmpty(response1))
+    {
+        selectedProduct.Name = response1;
+    }
+    else
+    {
+        selectedProduct.Name = selectedProduct.Name;
+    }
+    if (!string.IsNullOrEmpty(response2)) 
+    {
+        selectedProduct.Price = decimal.Parse(response2);
+    }
+    else
+    {
+        selectedProduct.Price = selectedProduct.Price;
+    }
+    if (!string.IsNullOrEmpty (response3))
+    {
+        int productId = int.Parse(response3);
+        selectedProduct.ProductTypeId = productId;
+
+    }
+    else
+    {
+        selectedProduct.ProductTypeId = selectedProduct.ProductTypeId;
+    }
+    Product updatedProduct = new Product
+    {
+        Name = selectedProduct.Name,
+        Price = selectedProduct.Price,
+        ProductTypeId = selectedProduct.ProductTypeId,
+    };
+    selectedProduct = updatedProduct;
+
+    Console.WriteLine("You update the Product!");
 }
 
 // don't move or change this!
