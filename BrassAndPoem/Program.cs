@@ -127,7 +127,20 @@ void DeleteProduct(List<Product> products, List<ProductType> productTypes)
 
 void AddProduct(List<Product> products, List<ProductType> productTypes)
 {
-    throw new NotImplementedException();
+    Console.WriteLine("Enter Product Name: ");
+    string Name = Console.ReadLine();
+    Console.WriteLine("Enter Product Price: ");
+    decimal Price = decimal.Parse(Console.ReadLine());
+    Console.WriteLine("Enter Product type: 1. Brass, 2. Poem");
+    int Id = int.Parse(Console.ReadLine());
+
+    Product newProduct = new Product
+    {
+        Name = Name,
+        Price = Price,
+        ProductTypeId = Id
+    };
+    products.Add(newProduct);
 }
 
 void UpdateProduct(List<Product> products, List<ProductType> productTypes)
